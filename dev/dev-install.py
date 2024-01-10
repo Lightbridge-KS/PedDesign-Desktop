@@ -38,9 +38,9 @@ else:
     cmd_win_str = fr"""
 pyinstaller --noconfirm --onefile -n {app_name} --windowed --add-data '{get_pkg_path("customtkinter", "win")}' --icon='{app_icon_path}' app.py
 """ 
-    os.system(cmd_win_str)
+    # os.system(cmd_win_str)
     # Zip File
-    os.chdir("dist") 
-    os.system(f"powershell -Command Compress-Archive -Path {app_name}.exe -DestinationPath {app_name}-win.zip")
-    #print(cmd_win_str)
+    # os.chdir("dist") 
+    # os.system(f"powershell -Command Compress-Archive -Path {app_name}.exe -DestinationPath {app_name}-win.zip")
+    print(cmd_win_str)
     #subprocess.run(cmd_win_str, shell=True) # Not work
