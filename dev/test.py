@@ -1,10 +1,8 @@
 import sys
 from pathlib import Path
 
-# sys.path.insert(1, str(Path(".").absolute() / "src"))
+sys.path.insert(1, str(Path(".").absolute()))
 import peddesign  # noqa: E402
-
-
 # print(Path(".").absolute()) # Project Root
 
 
