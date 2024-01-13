@@ -84,31 +84,3 @@ def get_contrast_str(ml_kg: float, weight_kg: float) -> str:
 
     contrast_calc = f"{ml_adj_txt} ({ml_kg} ml/kg * {weight_kg} kg = {ml})"
     return contrast_calc
-
-
-# Rate (ml/sec)
-
-# TODO: Deprecate this
-# def print_rate_ml_sec(contrast_ml, rate_formula="no_delay", delay_sec=None):
-#     rate_formula = rate_formula.lower()
-#     assert isinstance(contrast_ml, (int, float)) and contrast_ml > 0
-
-#     if rate_formula == "no_delay":
-#         rate = (contrast_ml + 15) / 45
-#         rate_adj = math.ceil(rate * 10) / 10  # Round up to 1 decimal place
-
-#         show_calc = f"({contrast_ml} + 15) / 45 = {round(rate, 3)}"
-
-#     elif rate_formula == "delay":
-#         assert isinstance(delay_sec, (int, float))
-
-#         rate = (contrast_ml + 15) / (delay_sec - 15)
-#         rate_adj = math.ceil(rate * 10) / 10  # Round up to 1 decimal place
-
-#         show_calc = f"({contrast_ml} + 15) / ({delay_sec} - 15) = {round(rate, 3)}"
-
-#     else:
-#         raise ValueError(
-#             "Invalid rate_formula value. Please choose 'no_delay' or 'delay'.")
-
-#     print(f"Rate: {rate_adj} ml/sec {show_calc}")
