@@ -26,38 +26,35 @@ def design_ct_str(
     rate_formula: str = "no_delay",
     delay_sec: float = None,
 ) -> None:
-    assert (
-        study_type in ["chest", "whole_abd", "chest_whole_abd", "cta_liver"]
-    ), "Invalid study_type argument, Please choose: 'chest', 'whole_abd', 'chest_whole_abd', 'cta_liver'"
     assert isinstance(is_first_study, bool), "`is_first_study` must be True of False"
     assert rate_formula in [
         "no_delay",
         "delay",
     ], "Invalid rate_formula argument. Please choose 'no_delay' or 'delay'."
-
-    # CT Chest
-    if study_type == "chest":
-        design = ct.DesignCTchest(weight_kg=weight_kg, is_first_study=is_first_study)
-    # CT Whole Abdomen
-    if study_type == "whole_abd":
-        design = ct.DesignCTwholeAbd(
-            weight_kg=weight_kg,
-            is_first_study=is_first_study,
-            rate_formula=rate_formula,
-            delay_sec=delay_sec,
-        )
-    # CT Chest + WA
-    if study_type == "chest_whole_abd":
-        design = ct.DesignCTchestWholeAbd(
-            weight_kg=weight_kg,
-            is_first_study=is_first_study,
-            rate_formula=rate_formula,
-            delay_sec=delay_sec,
-        )
-
-    # CTA Liver
-    if study_type == "cta_liver":
-        design = ct.DesignCTAliver(weight_kg=weight_kg, is_first_study=is_first_study)
+    
+    match study_type:
+        case "chest":
+            design = ct.DesignCTchest(weight_kg=weight_kg, is_first_study=is_first_study)
+        case "whole_abd":
+            design = ct.DesignCTwholeAbd(
+                weight_kg=weight_kg,
+                is_first_study=is_first_study,
+                rate_formula=rate_formula,
+                delay_sec=delay_sec
+                )
+        case "chest_whole_abd":
+            design = ct.DesignCTchestWholeAbd(
+                weight_kg=weight_kg,
+                is_first_study=is_first_study,
+                rate_formula=rate_formula,
+                delay_sec=delay_sec
+                )
+        case "cta_liver":
+            design = ct.DesignCTAliver(weight_kg=weight_kg, is_first_study=is_first_study)
+        case "hrct":
+            design = ct.DesignHRCTchest(weight_kg=weight_kg, is_first_study=is_first_study)
+        case _:
+            raise "Invalid study_type argument, Please choose: 'chest', 'whole_abd', 'chest_whole_abd', 'cta_liver', or 'hrct'"
 
     return design.str_design
 

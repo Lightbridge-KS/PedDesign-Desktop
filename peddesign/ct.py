@@ -201,3 +201,21 @@ class DesignCTAliver:
 
     def __repr__(self) -> str:
         return self.str_design
+
+# HRCT
+
+class DesignHRCTchest:
+    """docstring for DesignHRCTchest."""
+    def __init__(self, weight_kg: float, is_first_study: bool = False):
+        # kV
+        kV = get_kV(weight_kg)
+        # Noise
+        noise_index = 17 if is_first_study else 20
+        # Substitute Fmt String
+        self.str_design = design_template["hrct"].format(kV=kV,
+                                                         noise_index=noise_index)
+    def __str__(self):
+        return self.str_design
+
+    def __repr__(self) -> str:
+        return self.str_design

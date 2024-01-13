@@ -43,5 +43,14 @@ Delay: {cta_time} sec (CTA); 70 sec (Venous)
 Contrast: {contrast_calc}
 Rate: {rate_adj} ml/sec {show_calc}
 ---
+""",
+    "hrct": """-- Design CT --
+HRCT
+Plain
+kV: {kV}
+Noise index: {noise_index}
+Full inspiration -> mA auto 
+End expiration -> mA ลดลง 1/2
+---
 """
 }
