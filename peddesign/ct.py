@@ -6,9 +6,16 @@ from ._designTemp import design_template
 
 
 class DesignCTchest:
-    """docstring for DesignCTchest."""
+    """Design CT Chest class
+    """
 
     def __init__(self, weight_kg: float, is_first_study: bool = False) -> None:
+        """Design a chest CT Protocol
+
+        Args:
+            weight_kg (float): Weight in kg
+            is_first_study (bool, optional): `True` if this is the first study. Defaults to False.
+        """
         # kV
         kV = get_kV(weight_kg)
         # Noise
@@ -40,7 +47,17 @@ class DesignCTchest:
 
 
 class DesignCTwholeAbd:
+    """Design CT whole abdomen class
+    """
     def __init__(self, weight_kg: float, is_first_study: bool = False, rate_formula="no_delay", delay_sec=None) -> None:
+        """Design a CT of the Whole Abdomen Protocol
+
+        Args:
+            weight_kg (float): Weight in kg
+            is_first_study (bool, optional): `True` if this is the first study.. Defaults to False.
+            rate_formula (str, optional): "delay" or "no_delay": choose "delay" if you want to provide a delay time (as `delay_sec`). Defaults to "no_delay".
+            delay_sec (_type_, optional): If `rate_formula` = "delay", input the delay time.
+        """
         # kV
         kV = get_kV(weight_kg)
         # Noise
@@ -88,7 +105,17 @@ class DesignCTwholeAbd:
 
 
 class DesignCTchestWholeAbd:
+    """Design CT chest and whole abdomen class
+    """
     def __init__(self, weight_kg: float, is_first_study: bool = False, rate_formula="no_delay", delay_sec=None) -> None:
+        """Design a CT of the Chest and Whole Abdomen Protocol
+
+        Args:
+            weight_kg (float): Weight in kg
+            is_first_study (bool, optional): `True` if this is the first study. Defaults to False.
+            rate_formula (str, optional): "delay" or "no_delay": choose "delay" if you want to provide a delay time (as `delay_sec`). Defaults to "no_delay".
+            delay_sec (_type_, optional): If `rate_formula` = "delay", input the delay time.
+        """
         # kV
         kV = get_kV(weight_kg)
         # Noise
@@ -135,7 +162,15 @@ class DesignCTchestWholeAbd:
 
 
 class DesignCTAliver:
+    """Design CTA Liver Class
+    """
     def __init__(self, weight_kg: float, is_first_study: bool = False) -> None:
+        """Design a CTA of the liver
+
+        Args:
+            weight_kg (float): Weight in kg
+            is_first_study (bool, optional): `True` if this is the first study. Defaults to False.
+        """
         # kV
         kV = get_kV(weight_kg)
         # Noise
