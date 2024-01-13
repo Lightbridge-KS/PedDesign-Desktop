@@ -21,6 +21,7 @@ study_type_dict = {
     "CTWA": "whole_abd",
     "CT Chest + WA": "chest_whole_abd",
     "CTA Liver": "cta_liver",
+    "HRCT": "hrct"
 }
 
 is_first_study_dict = {"Not First Study": False, "First Study": True}
