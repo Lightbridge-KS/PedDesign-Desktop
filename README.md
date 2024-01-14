@@ -5,4 +5,4 @@
 
 - Build using [CustomTkinter](https://customtkinter.tomschimansky.com) python UI-library.
 
-![Example App in Mac](assets/PedDesignCT_Ex1-mac.png)
+![Example App in Mac](assets/PedDesignCT_Ex2-mac.png)
